@@ -79,7 +79,7 @@ p{margin:0}
 .sec__head p{margin-top:16px;color:var(--muted);font-size:1.125rem}
 
 /* Hero */
-.hero{position:relative;min-height:calc(100svh - var(--hh));display:grid;align-items:end;color:#fff;overflow:hidden;background:#1b4332}
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;color:#fff;overflow:hidden;background:#1b4332}
 .hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 55%}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,28,18,.25) 0%,rgba(10,28,18,.45) 40%,rgba(10,28,18,.88) 100%)}
 .hero .wrap{position:relative;z-index:1;padding-block:clamp(40px,8vh,88px)}
@@ -144,7 +144,7 @@ p{margin:0}
 
 /* ---- Pages intérieures ---- */
 .lead{font-size:1.25rem;color:var(--muted);margin-top:18px;max-width:36rem}
-.phead{min-height:calc(100svh - var(--hh));display:grid;align-items:center;padding-block:var(--pad)}
+.phead{min-height:100svh;display:grid;align-items:center;padding-block:var(--pad)}
 .phead__in{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(24px,5vw,64px);align-items:center}
 .phead .hero__cta .btn--ghost{color:var(--ink)}
 .phead .hero__cta .btn--ghost:hover{background:var(--bg2)}
@@ -174,7 +174,7 @@ p{margin:0}
 .strip p{font-size:1.125rem}
 .strip .cta__row{margin-top:8px}
 .strip .btn--ghost:hover{background:rgba(18,33,15,.12)}
-.ehead{padding-block:var(--pad);min-height:calc(100svh - var(--hh));display:grid;align-items:center}
+.ehead{padding-block:var(--pad);min-height:100svh;display:grid;align-items:center}
 .ehead__in{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,64px);align-items:center}
 .ehead figure{margin:0}
 .ehead img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
@@ -227,3 +227,7 @@ p{margin:0}
 .cinfo a.tel{display:flex;align-items:center;min-height:48px;font:700 1.375rem/1.2 var(--f-display);text-decoration:none}
 .cform{max-width:680px;margin-inline:auto}
 @media (max-width:900px){.cinfo{grid-template-columns:1fr;gap:12px}.cinfo .card{padding:18px 22px}}
+
+.hdr__call,.burger{flex:none}
+.logo{min-width:0}
+@media (max-width:420px){.logo{font-size:1.125rem;gap:8px}.logo svg{width:30px;height:30px}.hdr__in{gap:8px}}
