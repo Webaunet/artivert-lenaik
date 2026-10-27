@@ -181,63 +181,67 @@ ENTR = f'''<section class="ehead on-band" aria-labelledby="h1">
   </div>
 </section>'''
 
-CONT = f'''<section class="sec sec--stone sec--under" aria-labelledby="h1">
-  <div class="wrap">
-    <div class="sec__head">
+CONT = f'''<section class="chead sec--under" aria-labelledby="h1">
+  <div class="wrap chead__in">
+    <div>
       <p class="eyebrow">Contact</p>
-      <h1 id="h1" style="font-size:clamp(2rem,5vw,3.25rem)">Décrivez-nous votre projet</h1>
-      <p>Remplissez ces quelques champs : nous préparons un message prêt à envoyer par SMS, ou appelez directement.</p>
+      <h1 id="h1">Décrivez-nous votre projet</h1>
+      <p class="lead">Appelez directement, ou remplissez le formulaire : nous préparons un message prêt à envoyer par SMS.</p>
+      <div class="callcards">
+        <a class="callcard" href="tel:+33679799405"><span>Mobile</span><b>06 79 79 94 05</b></a>
+        <a class="callcard" href="tel:+33139125406"><span>Fixe</span><b>01 39 12 54 06</b></a>
+      </div>
+      <address class="chead__addr">Siège : 42 avenue de l'Yser, 78800 Houilles</address>
+      <p class="chead__go"><a class="btn btn--dark" href="#formulaire">Remplir le formulaire</a></p>
     </div>
-    <div class="cinfo">
-      <div class="card">
-        <h2>Nous appeler</h2>
-        <a class="tel" href="tel:+33679799405">06 79 79 94 05</a>
-        <a class="tel" href="tel:+33139125406">01 39 12 54 06</a>
-      </div>
-      <div class="card">
-        <h2>Siège</h2>
-        <address style="font-style:normal;font-weight:600">Artivert Lenaik<br>42 avenue de l'Yser<br>78800 Houilles</address>
-      </div>
-      <div class="card">
-        <h2>Comment ça marche</h2>
-        <ol><li>Vous remplissez le formulaire.</li><li>Vous vérifiez le récapitulatif.</li><li>Vous l'envoyez par SMS ou vous appelez.</li></ol>
-      </div>
-    </div>
+    <figure class="chead__img">
+      <img src="images/allee-dallee.jpg" width="1000" height="545" alt="Illustration : allée dallée éclairée en soirée le long d'une maison" fetchpriority="high">
+      <figcaption>Illustration</figcaption>
+    </figure>
   </div>
 </section>
 
 <section class="sec sec--lift on-band" id="formulaire" aria-labelledby="h-form">
-  <div class="wrap">
-    <div class="cform">
-        <form class="card form" id="form" novalidate>
-          <h2 id="h-form" style="font-size:1.5rem">Votre demande</h2>
-          <div class="field"><label for="f-nom">Nom</label><input id="f-nom" name="nom" type="text" autocomplete="name" required aria-describedby="e-nom"><p class="err" id="e-nom" role="alert" hidden></p></div>
-          <div class="field"><label for="f-tel">Téléphone</label><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="e-tel"><p class="err" id="e-tel" role="alert" hidden></p></div>
-          <div class="field"><label for="f-commune">Commune</label><input id="f-commune" name="commune" type="text" autocomplete="address-level2" required aria-describedby="e-commune"><p class="err" id="e-commune" role="alert" hidden></p></div>
-          <div class="field"><label for="f-besoin">Votre besoin</label>
-            <select id="f-besoin" name="besoin" required aria-describedby="e-besoin">
-              <option value="">Choisir dans la liste</option>
-              <option>Création d'un jardin ou d'un espace vert</option>
-              <option>Terrasse ou allée</option>
-              <option>Maçonnerie paysagère</option>
-              <option>Plantations</option>
-              <option>Entretien du jardin</option>
-              <option>Autre demande</option>
-            </select><p class="err" id="e-besoin" role="alert" hidden></p></div>
-          <div class="field"><label for="f-message">Message (facultatif)</label><textarea id="f-message" name="message" rows="4"></textarea></div>
-          <button class="btn btn--leaf btn--block" type="submit">Préparer ma demande</button>
-        </form>
-        <div class="card recap" id="recap" tabindex="-1" hidden style="margin-top:20px">
-          <h2 style="font-size:1.5rem">Demande prête</h2>
-          <p class="ok" id="recap-status" role="status"></p>
-          <textarea id="recap-text" readonly aria-label="Récapitulatif de votre demande"></textarea>
-          <div class="recap__btns">
-            <a class="btn btn--leaf" id="btn-sms" href="sms:+33679799405">Envoyer par SMS</a>
-            <button class="btn btn--dark" id="btn-copy" type="button">Copier</button>
-            <a class="btn btn--dark" href="tel:+33679799405">Appeler</a>
-          </div>
+  <div class="wrap fgrid">
+    <div class="fgrid__txt">
+      <p class="eyebrow">Formulaire</p>
+      <h2 id="h-form">Préparez votre demande</h2>
+      <ol class="fsteps">
+        <li>Vous remplissez les champs.</li>
+        <li>Vous vérifiez le récapitulatif.</li>
+        <li>Vous l'envoyez par SMS ou vous appelez.</li>
+      </ol>
+    </div>
+    <div class="fgrid__form">
+      <form class="card form" id="form" novalidate>
+        <div class="field"><label for="f-nom">Nom</label><input id="f-nom" name="nom" type="text" autocomplete="name" required aria-describedby="e-nom"><p class="err" id="e-nom" role="alert" hidden></p></div>
+        <div class="field"><label for="f-tel">Téléphone</label><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="e-tel"><p class="err" id="e-tel" role="alert" hidden></p></div>
+        <div class="field"><label for="f-commune">Commune</label><input id="f-commune" name="commune" type="text" autocomplete="address-level2" required aria-describedby="e-commune"><p class="err" id="e-commune" role="alert" hidden></p></div>
+        <div class="field"><label for="f-besoin">Votre besoin</label>
+          <select id="f-besoin" name="besoin" required aria-describedby="e-besoin">
+            <option value="">Choisir dans la liste</option>
+            <option>Création d'un jardin ou d'un espace vert</option>
+            <option>Terrasse ou allée</option>
+            <option>Maçonnerie paysagère</option>
+            <option>Plantations</option>
+            <option>Entretien du jardin</option>
+            <option>Autre demande</option>
+          </select><p class="err" id="e-besoin" role="alert" hidden></p></div>
+        <div class="field"><label for="f-message">Message (facultatif)</label><textarea id="f-message" name="message" rows="3"></textarea></div>
+        <button class="btn btn--leaf btn--block" type="submit">Préparer ma demande</button>
+      </form>
+      <div class="card recap" id="recap" tabindex="-1" hidden>
+        <h2 style="font-size:1.5rem">Demande prête</h2>
+        <p class="ok" id="recap-status" role="status"></p>
+        <textarea id="recap-text" readonly aria-label="Récapitulatif de votre demande"></textarea>
+        <div class="recap__btns">
+          <a class="btn btn--leaf" id="btn-sms" href="sms:+33679799405">Envoyer par SMS</a>
+          <button class="btn btn--dark" id="btn-copy" type="button">Copier</button>
+          <a class="btn btn--dark" href="tel:+33679799405">Appeler</a>
+          <button class="btn btn--ghost recap__edit" id="btn-edit" type="button">Modifier</button>
         </div>
       </div>
+    </div>
   </div>
 </section>'''
 

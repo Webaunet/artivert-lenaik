@@ -50,8 +50,10 @@
     out.value = txt;
     document.getElementById('btn-sms').href = 'sms:' + PHONE + '?&body=' + encodeURIComponent(txt);
     status.textContent = 'Votre demande est prête. Elle n\'est pas encore envoyée : choisissez un moyen ci-dessous.';
-    recap.hidden = false; recap.focus();
-    recap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    form.hidden = true; recap.hidden = false; recap.focus();
+  });
+  document.getElementById('btn-edit').addEventListener('click', function () {
+    recap.hidden = true; form.hidden = false; form.elements.nom.focus();
   });
   document.getElementById('btn-copy').addEventListener('click', function () {
     var b = this;
